@@ -1,0 +1,10 @@
+asyncpg
+sqlalchemy[asyncio]
+fastapi
+uvicorn
+pydantic
+alembic
+python-dotenv
+faker
+httpx
+openai

@@ -1,5 +1,9 @@
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 class AgentSettings:
     provider: str = os.getenv("MARKETING_AGENT_PROVIDER", "openai")
