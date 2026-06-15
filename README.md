@@ -51,11 +51,21 @@ Channel service:
 
 ### 0. GitHub Pages frontend
 
-The frontend is a static app served from `frontend/` and deployed by GitHub Actions to GitHub Pages.
+The frontend is a static app in `frontend/` and is deployed by GitHub Actions to a `gh-pages` branch.
 
-- Repository source: `main` branch
-- Publish source: GitHub Actions
-- Public URL: `https://krrishkhanna.github.io/xeno_crm/`
+To finish the Pages setup in GitHub:
+
+1. Open the repository settings.
+2. Go to `Settings > Pages`.
+3. Set the source to **Deploy from a branch**.
+4. Choose branch `gh-pages` and folder `/ (root)`.
+5. Save the setting.
+
+Once the branch is published, the live URL is:
+
+- `https://krrishkhanna.github.io/xeno_crm/`
+
+If you prefer the newer Pages workflow, you can switch the repo back to a GitHub Actions source later, but the `gh-pages` branch path is the most reliable for this static frontend.
 
 ### 1. Render deployment
 
