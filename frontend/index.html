@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xeno CRM Frontend</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Xeno CRM Frontend</p>
+        <h1>AI-native campaign control for shopper marketing.</h1>
+        <p class="lede">
+          Send campaigns, watch delivery progress, and inspect callbacks from one simple interface.
+        </p>
+        <div class="status-row">
+          <span id="crmStatus" class="badge">CRM: checking...</span>
+          <span id="channelStatus" class="badge">Channel: checking...</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Connection</h2>
+          <button id="refreshBtn" class="ghost">Refresh</button>
+        </div>
+        <label>
+          CRM base URL
+          <input id="crmBaseUrl" type="url" value="https://domelike-crier-hydroxide.ngrok-free.dev" />
+        </label>
+        <label>
+          Channel base URL
+          <input id="channelBaseUrl" type="url" value="https://salty-things-peel.loca.lt" />
+        </label>
+        <div class="actions">
+          <button data-template="winback" class="primary">Win-back</button>
+          <button data-template="loyalty" class="secondary">Loyalty</button>
+          <button data-template="welcome" class="secondary">Welcome</button>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Agent Result</h2>
+            <button id="clearResult" class="ghost">Clear</button>
+          </div>
+          <pre id="resultBox" class="log">Run a campaign to see the JSON response here.</pre>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Campaign Analytics</h2>
+            <button id="loadLatest" class="ghost">Load latest</button>
+          </div>
+          <div id="analyticsBox" class="metrics">
+            <div><strong>sent</strong><span>-</span></div>
+            <div><strong>delivered</strong><span>-</span></div>
+            <div><strong>failed</strong><span>-</span></div>
+            <div><strong>open rate</strong><span>-</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Communications</h2>
+          <button id="loadCommunications" class="ghost">Load</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Channel</th>
+                <th>Failure</th>
+              </tr>
+            </thead>
+            <tbody id="commTable">
+              <tr><td colspan="5">No data loaded yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
