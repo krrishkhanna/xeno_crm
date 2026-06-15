@@ -2,6 +2,9 @@ const state = {
   campaignId: null,
 };
 
+const defaultCrmBaseUrl = window.XENO_CONFIG?.crmBaseUrl ?? "https://domelike-crier-hydroxide.ngrok-free.dev";
+const defaultChannelBaseUrl = window.XENO_CONFIG?.channelBaseUrl ?? "https://salty-things-peel.loca.lt";
+
 const crmBaseUrlInput = document.getElementById("crmBaseUrl");
 const channelBaseUrlInput = document.getElementById("channelBaseUrl");
 const resultBox = document.getElementById("resultBox");
@@ -98,4 +101,6 @@ document.getElementById("clearResult").addEventListener("click", () => {
   resultBox.textContent = "Run a campaign to see the JSON response here.";
 });
 
+crmBaseUrlInput.value = defaultCrmBaseUrl;
+channelBaseUrlInput.value = defaultChannelBaseUrl;
 checkHealth();

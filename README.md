@@ -2,12 +2,15 @@
 
 An AI-native mini CRM for shopper marketing. The product is designed around a natural-language agent that plans campaigns, creates segments, drafts copy, and dispatches communications through a stubbed channel service.
 
+Live frontend: `https://krrishkhanna.github.io/xeno_crm/` after GitHub Pages is enabled on the repository.
+
 ## Architecture
 
 - `CRM backend`: FastAPI app on port `8000`
 - `Channel service`: FastAPI simulator on port `8001`
 - `Database`: Supabase/Postgres
 - `AI`: OpenAI-backed planner with a local fallback if the key is unavailable
+- `Frontend`: static GitHub Pages UI in `frontend/`
 
 ## Agent Workflow
 
@@ -45,6 +48,14 @@ Channel service:
 - `POST /send`
 
 ## Production Setup
+
+### 0. GitHub Pages frontend
+
+The frontend is a static app served from `frontend/` and deployed by GitHub Actions to GitHub Pages.
+
+- Repository source: `main` branch
+- Publish source: GitHub Actions
+- Public URL: `https://krrishkhanna.github.io/xeno_crm/`
 
 ### 1. Render deployment
 
@@ -107,6 +118,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8001
    - “Send a welcome campaign to new customers”
 4. Check `GET /api/v1/campaigns/{campaign_id}/analytics`.
 5. Check `GET /api/v1/communications` to watch delivery statuses move through the lifecycle.
+6. Open the GitHub Pages frontend and use the in-page buttons to run the same flows.
 
 ## Verification
 
